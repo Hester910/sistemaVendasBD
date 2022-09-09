@@ -1,12 +1,9 @@
 package view;
 
-import java.sql.Time;
 import java.util.Scanner;
-import java.util.Date;
 
 import dao.FuncionarioDAO;
 import dao.ItemDAO;
-import dao.ProdutoDAO;
 import dao.VendaDAO;
 import model.Funcionario;
 import model.Item;
