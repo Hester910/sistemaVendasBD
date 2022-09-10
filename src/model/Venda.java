@@ -14,7 +14,8 @@ public class Venda {
 			Funcionario funcionario, Item item) {
 
 		this.codigo = codigo;
-		this.horario = java.time.LocalDateTime.now().toString();
+		//this.horario = java.time.LocalDateTime.now().toString();
+		this.horario = horario;
 		this.valorTotal = valorTotal;
 		this.clienteCpf = clienteCpf;
 		this.desconto = desconto;
