@@ -23,9 +23,9 @@ public class VendaView {
 		System.out.println("CODIGO VENDA");
 		int codigoVenda = sc.nextInt();
 
-		//System.out.println("HORARIO");
-		String horario;
-			
+		System.out.println("HORARIO");
+		String horario = sc.next();
+		System.out.println();
 
 		System.out.println("VALOR TOTAL");
 		double valorTotal = sc.nextDouble();
@@ -42,9 +42,10 @@ public class VendaView {
 		ItemDAO iDAO = new ItemDAO();
 		Item i = iDAO.achar_item(codigoItem);
 		
-		Venda venda = new Venda(codigoVenda, valorTotal, cpfCliente, desconto, f, i);
+		Venda venda = new Venda(codigoVenda, horario, valorTotal, cpfCliente, desconto, f, i);
 		System.out.println("\nRESUMO VENDA\n");
 		System.out.println("FUNCIONARIO: " + venda.getFuncionario().getCodigo());
+		System.out.println("ITEM: " + venda.getItem().getCodigo());
 		System.out.println("CODIGO VENDA: " + venda.getCodigo());
 		System.out.println("HORARIO: " + venda.getHorario());
 		System.out.println("VALOR_TOTAL: " + venda.getValorTotal());
@@ -59,5 +60,10 @@ public class VendaView {
 			
 		}
 		
+	}
+	
+	public void listarVendas() {
+		VendaDAO vendaDAO = new VendaDAO();
+		vendaDAO.mostrarVendas();
 	}
 }

@@ -55,5 +55,10 @@ public class ProdutoView {
 			
 		}
 	}
+	
+	public void listarProdutos() {
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		produtoDAO.mostrarProduto();
+	}
 
 }
