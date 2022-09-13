@@ -17,14 +17,14 @@ public class FornecedorDAO {
 	}
 
 	public void inserirFornecedor(Fornecedor f) {
-		String sql = "INSERT INTO tb_fornecedores (for_codigo, for_descricao) VALUES (?, ?)";
+		String sql = "INSERT INTO tb_fornecedores (for_descricao) VALUES (?)";
 		try {
 			con = BancoConnection.getConnection();
 
 			PreparedStatement stm = con.prepareStatement(sql);
 
-			stm.setInt(1, f.getCodigo());
-			stm.setString(2, f.getDescricao());
+			//stm.setInt(1, f.getCodigo());
+			stm.setString(1, f.getDescricao());
 			stm.execute();
 			System.out.println("Fornecedor cadastrado com sucesso");
 		} catch (SQLException e) {

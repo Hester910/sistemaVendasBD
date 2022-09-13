@@ -17,14 +17,14 @@ public class CategoriaDAO {
 	}
 	
 	public void inserirCategoria(Categoria c) {
-		String sql = "INSERT INTO tb_categoria (cat_codigo, cat_nome) VALUES (?, ?)";
+		String sql = "INSERT INTO tb_categoria (cat_nome) VALUES ( ?)";
 		try {
 			con = BancoConnection.getConnection();
 			
 			PreparedStatement stm = con.prepareStatement(sql);
 			
-			stm.setInt(1, c.getCodigo());
-			stm.setString(2, c.getNome());
+			//stm.setInt(1, c.getCodigo());
+			stm.setString(1, c.getNome());
 			stm.execute();
 			System.out.println("Categoria Adicionada com sucesso");
 		}catch (SQLException e) {

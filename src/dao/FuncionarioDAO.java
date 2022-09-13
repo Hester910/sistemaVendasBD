@@ -17,16 +17,16 @@ public class FuncionarioDAO {
 	}
 
 	public void inserirFuncionario(Funcionario fun) {
-		String sql = "INSERT INTO tb_funcionarios (fun_codigo, fun_nome, fun_cpf, fun_senha) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO tb_funcionarios ( fun_nome, fun_cpf, fun_senha) VALUES ( ?, ?, ?)";
 		try {
 			con = BancoConnection.getConnection();
 
 			PreparedStatement stm = con.prepareStatement(sql);
 
-			stm.setInt(1, fun.getCodigo());
-			stm.setString(2, fun.getNome());
-			stm.setString(3, fun.getCpf());
-			stm.setString(4, fun.getSenha());
+			//stm.setInt(1, fun.getCodigo());
+			stm.setString(1, fun.getNome());
+			stm.setString(2, fun.getCpf());
+			stm.setString(3, fun.getSenha());
 			stm.execute();
 			System.out.println("Funcionario cadastrado com sucesso");
 		} catch (SQLException e) {

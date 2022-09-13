@@ -19,18 +19,18 @@ public class ProdutoDAO {
 	}
 
 	public void inserirProduto(Produto p) {
-		String sql = "INSERT INTO tb_produtos (pro_codigo, pro_descricao, pro_valor, pro_quantidade, tb_fornecedores_for_codigo, tb_categoria_cat_codigo) VALUES (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO tb_produtos ( pro_descricao, pro_valor, pro_quantidade, tb_fornecedores_for_codigo, tb_categoria_cat_codigo) VALUES ( ?, ?, ?, ?, ?)";
 		try {
 			con = BancoConnection.getConnection();
 
 			PreparedStatement stm = con.prepareStatement(sql);
 
-			stm.setInt(1, p.getCodigo());
-			stm.setString(2, p.getDescricao());
-			stm.setDouble(3, p.getValor());
-			stm.setInt(4, p.getQuantidade());
-			stm.setInt(5, p.getFornecedor().getCodigo());
-			stm.setInt(6, p.getCategoria().getCodigo());
+			//stm.setInt(1, p.getCodigo());
+			stm.setString(1, p.getDescricao());
+			stm.setDouble(2, p.getValor());
+			stm.setInt(3, p.getQuantidade());
+			stm.setInt(4, p.getFornecedor().getCodigo());
+			stm.setInt(5, p.getCategoria().getCodigo());
 
 			stm.execute();
 			System.out.println("Produto cadastrado com sucesso");

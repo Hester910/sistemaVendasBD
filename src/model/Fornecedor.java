@@ -8,6 +8,9 @@ public class Fornecedor {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
+	public Fornecedor( String descricao) {
+		this.descricao = descricao;
+	}
 
 	public Fornecedor() {
 
