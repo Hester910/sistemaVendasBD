@@ -5,9 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import dao.FuncionarioDAO;
+import model.Funcionario;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCadastroUsuario extends JFrame {
 
@@ -72,6 +79,21 @@ public class TelaCadastroUsuario extends JFrame {
 		contentPane.add(textFieldCpf);
 		
 		JButton btnNewButtonSalvar = new JButton("Salvar");
+		btnNewButtonSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String nome = textFieldNome.getText();
+					String cpf = textFieldCpf.getText();
+					String senha = textFieldSenha.getText();
+					Funcionario funcionario = new Funcionario(nome, cpf, senha);
+					FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+					funcionarioDAO.inserirFuncionario(funcionario);
+					JOptionPane.showMessageDialog(null, "Funcionario inserido com sucesso!");
+				}catch (Exception e1) {
+					JOptionPane.showMessageDialog(null, "Erro ao inserir o funcionario");
+				}
+			}
+		});
 		btnNewButtonSalvar.setBounds(218, 30, 89, 23);
 		contentPane.add(btnNewButtonSalvar);
 		
