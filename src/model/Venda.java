@@ -23,6 +23,19 @@ public class Venda {
 		this.item = item;
 	}
 
+	
+	public Venda(String horario, double valorTotal, String clienteCpf, double desconto, Funcionario funcionario,
+			Item item) {
+		super();
+		this.horario = horario;
+		this.valorTotal = valorTotal;
+		this.clienteCpf = clienteCpf;
+		this.desconto = desconto;
+		this.funcionario = funcionario;
+		this.item = item;
+	}
+
+
 	public Venda() {
 
 	}

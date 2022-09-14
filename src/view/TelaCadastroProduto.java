@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Choice;
 
 public class TelaCadastroProduto extends JFrame {
 
@@ -86,6 +87,13 @@ public class TelaCadastroProduto extends JFrame {
 		JButton btnNewButtonCancelar = new JButton("Cancelar");
 		btnNewButtonCancelar.setBounds(230, 123, 89, 23);
 		contentPane.add(btnNewButtonCancelar);
+		
+		Choice choice = new Choice();
+		choice.setBounds(345, 36, 99, 20);
+		contentPane.add(choice);
+		
+		JLabel lblNewLabel_1 = new JLabel("Categoria");
+		lblNewLabel_1.setBounds(349, 11, 95, 14);
+		contentPane.add(lblNewLabel_1);
 	}
-
 }

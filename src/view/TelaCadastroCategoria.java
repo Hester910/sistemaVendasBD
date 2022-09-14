@@ -5,9 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import dao.CategoriaDAO;
+import model.Categoria;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCadastroCategoria extends JFrame {
 
@@ -56,6 +63,18 @@ public class TelaCadastroCategoria extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Salvar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String nome = textField.getText();
+					Categoria categoria = new Categoria(nome);
+					CategoriaDAO categoriaDAO = new CategoriaDAO();
+					categoriaDAO.inserirCategoria(categoria);
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Erro ao inserir a categoria");
+				}
+			}
+		});
 		btnNewButton_1.setBounds(10, 67, 89, 23);
 		contentPane.add(btnNewButton_1);
 		

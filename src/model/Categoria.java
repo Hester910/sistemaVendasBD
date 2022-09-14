@@ -11,6 +11,12 @@ public class Categoria {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
+	
+
+	public Categoria(String nome) {
+		super();
+		this.nome = nome;
+	}
 
 	public int getCodigo() {
 		return codigo;

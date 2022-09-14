@@ -18,6 +18,17 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
+	
+	public Produto(String descricao, double valor, int quantidade, Fornecedor fornecedor, Categoria categoria) {
+		super();
+		this.descricao = descricao;
+		this.valor = valor;
+		this.quantidade = quantidade;
+		this.fornecedor = fornecedor;
+		this.categoria = categoria;
+	}
+
+
 	public Produto() {
 
 	}
